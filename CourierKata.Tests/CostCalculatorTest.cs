@@ -46,5 +46,18 @@ namespace CourierKata.Tests
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
 
+        [Fact]
+        public void CalculateInvoice_MaxDimensionAbove99_XLPackageOnSummary()
+        {
+            //Arrange
+            const string EXPECTED_INVOICE_SUMMARY = "XL Parcel: $25\nTotal Cost: $25";
+            var parcelAttributes = new ParcelAttributes(100, 100, 100);
+            var costCalulator = new CostCalculator();
+            //Act
+            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            //Assert
+            Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
+        }
+
     }
 }
