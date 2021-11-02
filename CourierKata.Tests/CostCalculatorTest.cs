@@ -12,10 +12,11 @@ namespace CourierKata.Tests
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Small Parcel: $3\nTotal Cost: $3";
-            var parcelAttributes = new ParcelAttributes(1, 1, 1);
+            var order = new Order();
+            order.AddParcelAttributes(new ParcelAttributes(1, 1, 1));
             var costCalulator = new CostCalculator();
             //Act
-            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            var invoice = costCalulator.CalculateInvoice(order);
             //Assert
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
@@ -25,10 +26,11 @@ namespace CourierKata.Tests
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Medium Parcel: $8\nTotal Cost: $8";
-            var parcelAttributes = new ParcelAttributes(10, 10, 10);
+            var order = new Order();
+            order.AddParcelAttributes(new ParcelAttributes(10, 10, 10));
             var costCalulator = new CostCalculator();
             //Act
-            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            var invoice = costCalulator.CalculateInvoice(order);
             //Assert
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
@@ -38,10 +40,11 @@ namespace CourierKata.Tests
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Large Parcel: $15\nTotal Cost: $15";
-            var parcelAttributes = new ParcelAttributes(50, 50, 50);
+            var order = new Order();
+            order.AddParcelAttributes(new ParcelAttributes(50, 50, 50));
             var costCalulator = new CostCalculator();
             //Act
-            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            var invoice = costCalulator.CalculateInvoice(order);
             //Assert
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
@@ -51,10 +54,11 @@ namespace CourierKata.Tests
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "XL Parcel: $25\nTotal Cost: $25";
-            var parcelAttributes = new ParcelAttributes(100, 100, 100);
+            var order = new Order();
+            order.AddParcelAttributes(new ParcelAttributes(100, 100, 100));
             var costCalulator = new CostCalculator();
             //Act
-            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            var invoice = costCalulator.CalculateInvoice(order);
             //Assert
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }

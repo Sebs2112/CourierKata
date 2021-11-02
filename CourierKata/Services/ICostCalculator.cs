@@ -4,6 +4,6 @@ namespace CourierKata.Services
 {
     public interface ICostCalculator
     {
-        Invoice CalculateInvoice(ParcelAttributes parcelAttributes);
+        Invoice CalculateInvoice(Order order);
     }
 }

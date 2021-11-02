@@ -8,14 +8,9 @@ namespace CourierKata.Models
 {
     public class Invoice
     {
-        private ICollection<Parcel> Parcels = new List<Parcel>();
+        public ICollection<Parcel> Parcels { get; } = new List<Parcel>();
         public decimal TotalCost { get; set; }
 
-        public void AddParcel(Parcel parcel)
-        {
-            Parcels.Add(parcel);
-            TotalCost += parcel.Cost;
-        }
         public override string ToString()
         {
             var returnString = "";

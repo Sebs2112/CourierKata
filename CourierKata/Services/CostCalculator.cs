@@ -10,11 +10,16 @@ namespace CourierKata.Services
 {
     public class CostCalculator : ICostCalculator
     {
-        public virtual Invoice CalculateInvoice(ParcelAttributes parcelAttributes)
+        public virtual Invoice CalculateInvoice(Order order)
         {
             var invoice = new Invoice();
-            var parcel = ParcelFactory.GetParcel(parcelAttributes);
-            invoice.AddParcel(parcel);
+            foreach (ParcelAttributes parcelAttribute in order.ParcelAttributesList)
+            {
+                var parcel = ParcelFactory.GetParcel(parcelAttribute);
+                invoice.Parcels.Add(parcel);
+                invoice.TotalCost += parcel.Cost;
+
+            }
             return invoice;
         }
     }

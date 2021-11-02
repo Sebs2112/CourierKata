@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourierKata.Models
 {
-    class Order
+    public class Order
     {
         public ICollection<ParcelAttributes> ParcelAttributesList { get; } = new List<ParcelAttributes>();
 
