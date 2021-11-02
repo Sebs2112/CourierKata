@@ -8,7 +8,7 @@ namespace CourierKata.Tests
     public class CostCalculatorTest
     {
         [Fact]
-        public void CalculateInvoice_MaxDimensionLessThan10_SmallPackageOnSummary()
+        public void CalculateInvoice_MaxDimensionLessThan10_SmallParcelOnSummary()
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Small Parcel: $3\nTotal Cost: $3";
@@ -21,7 +21,7 @@ namespace CourierKata.Tests
         }
 
         [Fact]
-        public void CalculateInvoice_MaxDimensionLessThan50Above9_MediumPackageOnSummary()
+        public void CalculateInvoice_MaxDimensionLessThan50Above9_MediumParcelOnSummary()
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Medium Parcel: $8\nTotal Cost: $8";
@@ -34,7 +34,7 @@ namespace CourierKata.Tests
         }
 
         [Fact]
-        public void CalculateInvoice_MaxDimensionLessThan100Above49_LargePackageOnSummary()
+        public void CalculateInvoice_MaxDimensionLessThan100Above49_LargeParcelOnSummary()
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "Large Parcel: $15\nTotal Cost: $15";
@@ -47,7 +47,7 @@ namespace CourierKata.Tests
         }
 
         [Fact]
-        public void CalculateInvoice_MaxDimensionAbove99_XLPackageOnSummary()
+        public void CalculateInvoice_MaxDimensionAbove99_XLParcelOnSummary()
         {
             //Arrange
             const string EXPECTED_INVOICE_SUMMARY = "XL Parcel: $25\nTotal Cost: $25";
