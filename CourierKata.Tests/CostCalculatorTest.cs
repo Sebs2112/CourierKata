@@ -19,5 +19,18 @@ namespace CourierKata.Tests
             //Assert
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
+
+        [Fact]
+        public void CalculateInvoice_MaxDimensionLessThan50Above9_MediumPackageOnSummary()
+        {
+            //Arrange
+            const string EXPECTED_INVOICE_SUMMARY = "Medium Parcel: $8\nTotal Cost: $8";
+            var parcelAttributes = new ParcelAttributes(10, 10, 10);
+            var costCalulator = new CostCalculator();
+            //Act
+            var invoice = costCalulator.CalculateInvoice(parcelAttributes);
+            //Assert
+            Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
+        }
     }
 }
