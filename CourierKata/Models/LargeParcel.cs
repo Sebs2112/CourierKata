@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourierKata.Models
 {
-    public class LargeParcel : Parcel
+    internal class LargeParcel : Parcel
     {
         public LargeParcel(ParcelAttributes parcelAttributes) : base(parcelAttributes, "Large Parcel", 15)
         {

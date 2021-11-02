@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace CourierKata.Models
 {
-    internal class SmallParcel : Parcel
+    internal class XLParcel : Parcel
     {
-
-        public SmallParcel(ParcelAttributes parcelAttributes) : base(parcelAttributes, "Small Parcel", 3)
+        public XLParcel(ParcelAttributes parcelAttributes) : base(parcelAttributes, "XL Parcel", 25)
         {
         }
-
     }
 }

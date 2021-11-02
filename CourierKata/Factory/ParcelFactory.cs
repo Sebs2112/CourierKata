@@ -21,9 +21,13 @@ namespace CourierKata.Factory
             {
                 return new MediumParcel(parcelAttributes);
             }
-            else
+            else if (maxDimension >= 50 && maxDimension < 100)
             {
                 return new LargeParcel(parcelAttributes);
+            }
+            else
+            {
+                return new XLParcel(parcelAttributes);
             }
         }
 
