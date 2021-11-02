@@ -9,7 +9,7 @@ namespace CourierKata.Models
     internal class SmallParcel : Parcel
     {
 
-        public SmallParcel(ParcelAttributes parcelAttributes) : base(parcelAttributes, "Small Parcel", 3)
+        public SmallParcel(ParcelAttributes parcelAttributes) : base(parcelAttributes, "Small Parcel", 3,1)
         {
         }
 

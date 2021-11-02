@@ -111,7 +111,7 @@ namespace CourierKata.Tests
         public void CalculateInvoice_SmallParcel5KGWeight_CorrectTotalCost()
         {
             //Arrange
-            const string EXPECTED_INVOICE_SUMMARY = "Small Parcel: $3\n" +
+            const string EXPECTED_INVOICE_SUMMARY = "Small Parcel: $11\n" +
                                                     "Total Cost: $11";
             var order = new Order();
             var parcelAttributes = new ParcelAttributes(1, 1, 1)
