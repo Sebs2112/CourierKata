@@ -11,7 +11,7 @@ namespace CourierKata.Models
         private ICollection<Parcel> Parcels = new List<Parcel>();
         public decimal TotalCost { get; set; }
 
-        public void addParcel(Parcel parcel)
+        public void AddParcel(Parcel parcel)
         {
             Parcels.Add(parcel);
             TotalCost += parcel.Cost;

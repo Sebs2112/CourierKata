@@ -1,4 +1,5 @@
-﻿using CourierKata.Models;
+﻿using CourierKata.Factory;
+using CourierKata.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace CourierKata.Services
 {
     public class CostCalculator : ICostCalculator
     {
-        public Invoice CalculateInvoice(ParcelAttributes parcelAttributes)
+        public virtual Invoice CalculateInvoice(ParcelAttributes parcelAttributes)
         {
             var invoice = new Invoice();
-            invoice.addParcel(new SmallParcel(parcelAttributes));
+            var parcel = ParcelFactory.GetParcel(parcelAttributes);
+            invoice.AddParcel(parcel);
             return invoice;
         }
     }

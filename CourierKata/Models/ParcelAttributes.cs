@@ -18,5 +18,12 @@ namespace CourierKata.Models
             Height = height;
             Width = width;
         }
+
+        public double GetMaxDimension()
+        {
+            var dimensionsArray = new[] { Length, Height, Width };
+
+            return dimensionsArray.Max();
+        }
     }
 }
