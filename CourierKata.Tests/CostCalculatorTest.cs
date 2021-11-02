@@ -107,6 +107,27 @@ namespace CourierKata.Tests
 
             Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
         }
+        [Fact]
+        public void CalculateInvoice_SmallParcel5KGWeight_CorrectTotalCost()
+        {
+            //Arrange
+            const string EXPECTED_INVOICE_SUMMARY = "Small Parcel: $3\n" +
+                                                    "Total Cost: $11";
+            var order = new Order();
+            var parcelAttributes = new ParcelAttributes(1, 1, 1)
+            {
+                Weight = 5
+            };
+            order.AddParcelAttributes(parcelAttributes);
+
+            var costCalculator = new CostCalculatorWithWeightCosts();
+            //Act
+            var invoice = costCalculator.CalculateInvoice(order);
+            //Assert
+
+            Assert.Equal(EXPECTED_INVOICE_SUMMARY, invoice.ToString());
+        }
+
 
 
     }
