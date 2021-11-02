@@ -11,11 +11,20 @@ namespace CourierKata.Factory
     {
         public static Parcel GetParcel(ParcelAttributes parcelAttributes)
         {
-            if (parcelAttributes.GetMaxDimension() < 10)
+            var maxDimension = parcelAttributes.GetMaxDimension();
+
+            if (maxDimension < 10)
             {
                 return new SmallParcel(parcelAttributes);
             }
-            else { return new MediumParcel(parcelAttributes); }
+            else if (maxDimension >= 10 && maxDimension < 50)
+            {
+                return new MediumParcel(parcelAttributes);
+            }
+            else
+            {
+                return new LargeParcel(parcelAttributes);
+            }
         }
 
     }
