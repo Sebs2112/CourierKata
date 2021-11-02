@@ -9,6 +9,7 @@ namespace CourierKata.Models
     public class Order
     {
         public ICollection<ParcelAttributes> ParcelAttributesList { get; } = new List<ParcelAttributes>();
+        public bool SpeedyShipping { get; set; }
 
         public Order() { }
         public Order(ICollection<ParcelAttributes> parcelAttributes)
